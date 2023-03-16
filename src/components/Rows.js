@@ -1,5 +1,6 @@
 import Row from "./Row";
 import requests from "../requests";
+import style from "./Rows.module.scss";
 
 //generator function for Row IDs
 const Rows = () => {
@@ -14,7 +15,7 @@ const Rows = () => {
   const gen = idGenerator();
 
   return (
-    <div>
+    <div className={style.rows}>
       {requests.map((req) => (
         <Row
           key={gen.next().value}
