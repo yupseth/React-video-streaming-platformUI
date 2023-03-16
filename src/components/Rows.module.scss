@@ -1,3 +1,7 @@
 .rows {
+  display: flex;
+  flex-direction: column;
   background-color: black;
+  padding-left: 4vw;
+  gap: 50px;
 }
