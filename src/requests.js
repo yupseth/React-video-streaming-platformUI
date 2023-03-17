@@ -4,7 +4,7 @@ const requests = [
   {
     isLarge: true,
     name: "Trending",
-    fetch: `/trending/all/week?api_key=${API_KEY}&language=en-US`,
+    fetch: `/trending/all/week?api_key=${API_KEY}&include_adult=false&language=en-US`,
   },
   {
     isLarge: false,
@@ -14,7 +14,7 @@ const requests = [
   {
     isLarge: false,
     name: "Animation",
-    fetch: `discover/movie?api_key=${API_KEY}&with_genres=16`,
+    fetch: `discover/movie?api_key=${API_KEY}&include_adult=false&with_genres=16`,
   },
   {
     isLarge: true,
@@ -25,24 +25,25 @@ const requests = [
   {
     isLarge: false,
     name: "Action Movies",
-    fetch: `discover/movie?api_key=${API_KEY}&with_genres=28`,
+    fetch: `discover/movie?api_key=${API_KEY}&include_adult=false&with_genres=28`,
   },
   {
     isLarge: false,
     name: "Comedy movies",
-    fetch: `discover/movie?api_key=${API_KEY}&with_genres=35`,
+    fetch: `discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&page=1&with_genres=35&with_original_language=en`,
   },
 
   {
     isLarge: true,
     name: "Horror Movies",
-    fetch: `discover/movie?api_key=${API_KEY}&with_genres=27`,
+
+    fetch: `discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&page=1&with_genres=27&with_original_language=en`,
   },
 
   {
     isLarge: false,
     name: "Romance Movies",
-    fetch: `discover/movie?api_key=${API_KEY}&with_genres=10749`,
+    fetch: `discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&page=1&with_genres=10749&with_original_language=en`,
   },
   {
     isLarge: false,
