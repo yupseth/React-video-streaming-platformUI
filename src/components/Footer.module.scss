@@ -1,0 +1,64 @@
+.footer {
+  padding-top: 2vh;
+  padding-bottom: 4vh;
+  padding-left: 4vw;
+  padding-right: 4vw;
+
+  background: transparent;
+  color: rgba(255, 255, 255, 0.656);
+  font-size: 0.7rem;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  .anima_icon {
+    align-self: center;
+    height: 50px;
+    width: 50px;
+  }
+
+  .credits {
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-size: 1rem;
+    font-family: "Bebas Neue";
+    letter-spacing: 1px;
+    a {
+      text-decoration: none;
+      color: rgb(235, 39, 75);
+      cursor: pointer;
+
+      &:hover {
+        color: rgb(239, 70, 101);
+      }
+    }
+  }
+  .bottomHalf {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .bottom {
+      ul {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+
+        li {
+          list-style-type: none;
+          cursor: pointer;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
