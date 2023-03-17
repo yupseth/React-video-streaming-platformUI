@@ -1,6 +1,6 @@
 import style from "./Nav.module.scss";
 import logo from "../img/Anima_Logo.png";
-import icon from "../img/Anima_Icon.png";
+
 import { useEffect, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
@@ -21,7 +21,7 @@ const Nav = () => {
   return (
     <div className={`${style.nav} ${isScrolled && style.nav__black}`}>
       <MenuIcon className={style.menu_icon} />
-      {/* // <div className={style.nav}> */}
+
       <img className={style.nav__logo} src={logo} alt="anima logo" />
 
       <div className={style.right}>
