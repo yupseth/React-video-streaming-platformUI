@@ -1,12 +1,15 @@
 import style from "./Nav.module.scss";
 import logo from "../img/Anima_Logo.png";
-
 import { useEffect, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
+import Menu from "./Menu";
 
 const Nav = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  //////////
+  const [isVisibleMenu, setIsVisibleMenu] = useState(false);
+  //////////
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -18,9 +21,15 @@ const Nav = () => {
     });
   }, []);
 
+  const showMenu = () => {
+    console.log("ia uite meniul");
+    setIsVisibleMenu(!isVisibleMenu);
+  };
+
   return (
     <div className={`${style.nav} ${isScrolled && style.nav__black}`}>
-      <MenuIcon className={style.menu_icon} />
+      <MenuIcon className={style.menu_icon} onClick={showMenu} />
+      {isVisibleMenu && <Menu onHideMenu={showMenu} />}
 
       <img className={style.nav__logo} src={logo} alt="anima logo" />
 

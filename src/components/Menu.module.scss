@@ -1,0 +1,50 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
+  height: 90vh;
+  width: 50vw;
+  background-color: rgb(29, 29, 29);
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 2vh;
+  padding-left: 4vw;
+  padding-right: 4vw;
+  padding-bottom: 10vh;
+  color: rgba(231, 231, 231, 0.81);
+  font-family: "Nunito Sans";
+  z-index: 999;
+
+  .menu__content {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+    gap: 20px;
+    font-weight: 400;
+    font-size: 1.3rem;
+
+    li:hover {
+      color: white;
+      font-weight: 600;
+    }
+
+    .closeIcon {
+      font-size: 1.5rem;
+    }
+  }
+
+  .anima_text {
+    user-select: none;
+    letter-spacing: 3px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(231, 231, 231, 0.81);
+    border-bottom: 1px solid rgba(231, 231, 231, 0.81);
+  }
+
+  img {
+    height: auto;
+    width: 60px;
+  }
+}
