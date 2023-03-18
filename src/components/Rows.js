@@ -16,14 +16,17 @@ const Rows = () => {
 
   return (
     <div className={style.rows}>
-      {requests.map((req) => (
-        <Row
-          key={gen.next().value}
-          title={req.name}
-          fetchURL={req.fetch}
-          isLargeRow={req.isLarge}
-        />
-      ))}
+      {requests.map(
+        (req) =>
+          req.name !== "Trailer" && (
+            <Row
+              key={gen.next().value}
+              title={req.name}
+              fetchURL={req.fetch}
+              isLargeRow={req.isLarge}
+            />
+          )
+      )}
     </div>
   );
 };

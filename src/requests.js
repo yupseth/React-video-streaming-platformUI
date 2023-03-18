@@ -50,11 +50,11 @@ const requests = [
     name: "Documentaries",
     fetch: `discover/movie?api_key=${API_KEY}&with_genres=99`,
   },
-  // {
-  //   isLarge: false,
-  //   name: "Trailer",
-  //   fetch: `/movie/{movie_id}/videos?api_key=${API_KEY}`,
-  // },
+  {
+    isLarge: false,
+    name: "Trailer",
+    fetch: `https://api.themoviedb.org/3/movie/{movie_id}/videos?api_key=${API_KEY}&language=en-US`,
+  },
 ];
 
 export default requests;
