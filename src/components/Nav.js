@@ -24,7 +24,6 @@ const Nav = () => {
   }, []);
 
   const showMenu = () => {
-    console.log("ia uite meniul");
     setIsVisibleMenu(!isVisibleMenu);
     setIsVisibleProfile(false);
   };
