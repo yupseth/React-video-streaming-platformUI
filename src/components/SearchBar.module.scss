@@ -1,0 +1,21 @@
+.input_wrapper {
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+
+  input {
+    background: pink;
+    border: none;
+    height: 100%;
+    font-size: 0.7rem;
+    &:focus {
+      outline: none;
+    }
+  }
+  .search_icon {
+    color: rgba(255, 255, 255, 0.774);
+    cursor: pointer;
+  }
+}

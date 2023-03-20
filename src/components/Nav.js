@@ -2,9 +2,10 @@ import style from "./Nav.module.scss";
 import logo from "../img/Anima_Logo.png";
 import { useEffect, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import SearchIcon from "@mui/icons-material/Search";
+
 import Menu from "./Menu";
 import Profile from "./Profile";
+import SearchBar from "./SearchBar";
 
 const Nav = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,7 +42,8 @@ const Nav = () => {
       <img className={style.nav__logo} src={logo} alt="anima logo" />
 
       <div className={style.right}>
-        <SearchIcon className={style.search_icon} />
+        <SearchBar />
+
         <img
           onClick={onProfileClick}
           className={style.nav__avatar}
