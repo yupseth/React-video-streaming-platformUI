@@ -2,10 +2,10 @@ import style from "./Nav.module.scss";
 import logo from "../img/Anima_Logo.png";
 import { useEffect, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-
 import Menu from "./Menu";
 import Profile from "./Profile";
 import SearchBar from "./SearchBar";
+import SearchResultsList from "./SearchResultsList";
 
 const Nav = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -13,6 +13,8 @@ const Nav = () => {
   const [isVisibleMenu, setIsVisibleMenu] = useState(false);
   //////////
   const [isVisibleProfile, setIsVisibleProfile] = useState(false);
+  //////////
+  const [results, setResults] = useState([]);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -42,7 +44,8 @@ const Nav = () => {
       <img className={style.nav__logo} src={logo} alt="anima logo" />
 
       <div className={style.right}>
-        <SearchBar />
+        <SearchBar setResults={setResults} />
+        <SearchResultsList results={results} />
 
         <img
           onClick={onProfileClick}

@@ -2,7 +2,7 @@ import style from "./SearchBar.module.scss";
 import SearchIcon from "@mui/icons-material/Search";
 import { useState } from "react";
 
-const SearchBar = () => {
+const SearchBar = ({ setResults }) => {
   const [input, setInput] = useState("");
 
   const fetchData = (value) => {
@@ -11,8 +11,11 @@ const SearchBar = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        const results = data.results.filter((el) => el.media_type !== "person");
+        const results = data.results.filter(
+          (el) => value && el.media_type !== "person"
+        );
         console.log(results);
+        setResults(results);
       });
   };
 
