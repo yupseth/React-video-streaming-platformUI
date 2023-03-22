@@ -68,7 +68,7 @@ const requests = [
   {
     place: "movies",
     name: "Movies",
-    fetch: `discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&watch_region=en-US&with_watch_monetization_types=flatrate`,
+    fetch: `discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`,
   },
 ];
 
