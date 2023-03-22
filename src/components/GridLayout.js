@@ -3,7 +3,6 @@ import style from "./GridLayout.module.scss";
 const base_url = "https://image.tmdb.org/t/p/original/";
 
 const GridLayout = ({ elements }) => {
-  console.log(elements);
   return (
     <div className={style.grid_container}>
       {elements.map((movie) => (

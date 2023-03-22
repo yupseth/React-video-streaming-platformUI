@@ -8,8 +8,8 @@ const Movies = () => {
   const [popMovies, setPopMovies] = useState([]);
 
   const fetchMovies = async () => {
-    const filter = requests.filter((req) => req.place === "movies");
-    const fetchURL = filter[0].fetch;
+    const filter = requests.find((req) => req.place === "movies");
+    const fetchURL = filter.fetch;
     const request = await axios.get(fetchURL);
     setPopMovies(request.data.results);
     return request;
