@@ -1,5 +1,5 @@
 import Row from "./Row";
-import requests from "../requests";
+import requests from "../../../requests";
 import style from "./Rows.module.scss";
 
 //generator function for Row IDs
