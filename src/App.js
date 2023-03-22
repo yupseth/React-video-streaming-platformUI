@@ -1,16 +1,11 @@
-import Banner from "./components/Banner";
-import Footer from "./components/Footer";
-import Nav from "./components/Nav";
-import Rows from "./components/Rows";
 import "./App.scss";
-
+import Home from "./components/Home";
 function App() {
   return (
     <div className="app">
-      <Nav />
-      <Banner />
-      <Rows />
-      <Footer />
+      {/* //nav */}
+      <Home></Home>
+      {/* //footer */}
     </div>
   );
 }

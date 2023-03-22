@@ -6,6 +6,9 @@ $deepPurple: #140227;
 $black: #050005;
 
 .app {
+  -webkit-tap-highlight-color: transparent;
+
+  user-select: none;
   background: radial-gradient(circle at bottom, $deepPurple, transparent 80%),
     linear-gradient(to top, #e9e33898 0%, transparent 10%),
     linear-gradient(to bottom, transparent, rgba($deepPurple, 2.5) 50%), $black;
