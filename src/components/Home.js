@@ -7,8 +7,10 @@ const Home = () => {
   return (
     <>
       <Nav />
+      {/* //de aici incepe routing */}
       <Banner />
       <Rows />
+      {/* //aici se termina */}
       <Footer />
     </>
   );
