@@ -1,5 +1,6 @@
-import requests from "../requests";
-import axios from "../axios";
+// import requests from "../requests";
+import requests from "../../../requests";
+import axios from "../../../axios";
 import { useEffect, useState } from "react";
 import style from "./Banner.module.scss";
 
