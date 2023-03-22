@@ -45,7 +45,7 @@ const Nav = () => {
 
       <div className={style.right}>
         <SearchBar setResults={setResults} />
-        <SearchResultsList results={results} />
+        {results.length > 0 && <SearchResultsList results={results} />}
 
         <img
           onClick={onProfileClick}
