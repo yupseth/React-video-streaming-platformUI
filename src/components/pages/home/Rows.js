@@ -18,7 +18,7 @@ const Rows = () => {
     <div className={style.rows}>
       {requests.map(
         (req) =>
-          req.name !== "Trailer" && (
+          req.place === "home" && (
             <Row
               key={gen.next().value}
               title={req.name}
