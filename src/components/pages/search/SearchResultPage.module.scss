@@ -1,0 +1,36 @@
+.search {
+  height: 100%;
+  width: 100%;
+  font-size: 1rem;
+  color: white;
+  padding-top: 7vh;
+  background: transparent;
+
+  .button__back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    color: rgba(224, 224, 224, 0.783);
+    border: 1px solid rgba(224, 224, 224, 0.783);
+    border-radius: 50%;
+    margin-left: 4vw;
+    cursor: pointer;
+    user-select: none;
+    padding: 0;
+
+    &:hover {
+      color: rgba(255, 255, 255);
+      border-color: rgba(255, 255, 255);
+    }
+  }
+  .search__container {
+    padding: 0 4vw;
+    .noresults {
+      margin-top: 20px;
+      height: 100vh;
+      width: 100%;
+    }
+  }
+}

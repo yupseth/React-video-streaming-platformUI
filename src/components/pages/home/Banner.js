@@ -12,7 +12,6 @@ const Banner = () => {
       const request = await axios.get(requests[0].fetch);
       const res = request.data.results;
 
-      //   console.log(res[0]);
       setBanner(res[0]);
       return request;
     };

@@ -2,7 +2,7 @@ import style from "./SearchBar.module.scss";
 import SearchIcon from "@mui/icons-material/Search";
 import { useState } from "react";
 
-const SearchBar = ({ setResults }) => {
+const SearchBar = ({ setResults, isVisible, toggleVisibility, results }) => {
   const [input, setInput] = useState("");
 
   const fetchData = (value) => {
@@ -14,7 +14,7 @@ const SearchBar = ({ setResults }) => {
         const results = data.results.filter(
           (el) => value && el.media_type !== "person"
         );
-        console.log(results);
+
         setResults(results);
       });
   };
@@ -25,12 +25,14 @@ const SearchBar = ({ setResults }) => {
   };
   return (
     <div className={style.input_wrapper}>
-      <SearchIcon className={style.search_icon} />
-      <input
-        placeholder="Type to search..."
-        value={input}
-        onChange={(e) => handleChange(e.target.value)}
-      />
+      <SearchIcon className={style.search_icon} onClick={toggleVisibility} />
+      {isVisible && (
+        <input
+          placeholder="Type to search..."
+          value={input}
+          onChange={(e) => handleChange(e.target.value)}
+        />
+      )}
     </div>
   );
 };
