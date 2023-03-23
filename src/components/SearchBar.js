@@ -14,7 +14,7 @@ const SearchBar = ({ setResults, isVisible, toggleVisibility, results }) => {
         const results = data.results.filter(
           (el) => value && el.media_type !== "person"
         );
-        console.log(results);
+
         setResults(results);
       });
   };

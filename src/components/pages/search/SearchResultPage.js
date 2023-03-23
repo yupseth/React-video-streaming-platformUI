@@ -4,7 +4,6 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { Link } from "react-router-dom";
 
 const SearchResultPage = ({ results }) => {
-  console.log(results);
   return (
     <div className={style.search}>
       <Link to="/">
