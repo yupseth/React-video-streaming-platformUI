@@ -1,18 +1,28 @@
+import { useState, useEffect } from "react";
 import style from "./Series.module.scss";
+import requests from "../../../requests";
+import axios from "../../../axios";
+import GridLayout from "../../GridLayout";
 
 const Series = () => {
+  const [popSeries, setPopSeries] = useState([]);
+
+  const fetchSeries = async () => {
+    const filter = requests.find((req) => req.place === "series");
+    const fetchURL = filter.fetch;
+    const request = await axios.get(fetchURL);
+    setPopSeries(request.data.results);
+    return request;
+  };
+
+  useEffect(() => {
+    fetchSeries();
+  }, []);
+
   return (
     <div className={style.series_screen}>
-      <div className={style.series_container}>
-        <h1>SERIES</h1>
-        <h1>SERIES</h1>
-        <h1>SERIES</h1>
-        <h1>SERIES</h1>
-        <h1>SERIES</h1>
-        <h1>SERIES</h1>
-        <h1>SERIES</h1>
-        <h1>SERIES</h1>
-        <h1>SERIES</h1>
+      <div className={style.series__container}>
+        <GridLayout elements={popSeries} />
       </div>
     </div>
   );
