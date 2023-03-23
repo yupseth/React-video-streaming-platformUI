@@ -15,6 +15,12 @@ const Nav = () => {
   const [isVisibleProfile, setIsVisibleProfile] = useState(false);
   //////////
   const [results, setResults] = useState([]);
+  //////////
+  const [isVisibleSearch, setIsVisibleSearch] = useState(false);
+
+  const toggleVisibility = () => {
+    setIsVisibleSearch(!isVisibleSearch);
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -44,7 +50,11 @@ const Nav = () => {
       <img className={style.nav__logo} src={logo} alt="anima logo" />
 
       <div className={style.right}>
-        <SearchBar setResults={setResults} />
+        <SearchBar
+          isVisible={isVisibleSearch}
+          toggleVisibility={toggleVisibility}
+          setResults={setResults}
+        />
         {results.length > 0 && <SearchResultsList results={results} />}
 
         <img
