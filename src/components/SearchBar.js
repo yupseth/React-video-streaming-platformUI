@@ -2,7 +2,7 @@ import style from "./SearchBar.module.scss";
 import SearchIcon from "@mui/icons-material/Search";
 import { useState } from "react";
 
-const SearchBar = ({ setResults, isVisible, toggleVisibility }) => {
+const SearchBar = ({ setResults, isVisible, toggleVisibility, results }) => {
   const [input, setInput] = useState("");
 
   const fetchData = (value) => {

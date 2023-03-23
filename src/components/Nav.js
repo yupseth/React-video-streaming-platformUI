@@ -5,16 +5,17 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Menu from "./Menu";
 import Profile from "./Profile";
 import SearchBar from "./SearchBar";
-import SearchResultsList from "./SearchResultsList";
+import SearchResultPage from "./pages/search/SearchResultPage";
+import { Link } from "react-router-dom";
 
-const Nav = () => {
+const Nav = ({ results, setResults }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   //////////
   const [isVisibleMenu, setIsVisibleMenu] = useState(false);
   //////////
   const [isVisibleProfile, setIsVisibleProfile] = useState(false);
   //////////
-  const [results, setResults] = useState([]);
+  // const [results, setResults] = useState([]);
   //////////
   const [isVisibleSearch, setIsVisibleSearch] = useState(false);
 
@@ -50,12 +51,15 @@ const Nav = () => {
       <img className={style.nav__logo} src={logo} alt="anima logo" />
 
       <div className={style.right}>
-        <SearchBar
-          isVisible={isVisibleSearch}
-          toggleVisibility={toggleVisibility}
-          setResults={setResults}
-        />
-        {results.length > 0 && <SearchResultsList results={results} />}
+        <Link to="/search">
+          <SearchBar
+            isVisible={isVisibleSearch}
+            toggleVisibility={toggleVisibility}
+            setResults={setResults}
+            results={results}
+          />{" "}
+        </Link>
+        {/* {results.length > 0 && <SearchResultPage results={results} />} */}
 
         <img
           onClick={onProfileClick}
