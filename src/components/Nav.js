@@ -60,7 +60,6 @@ const Nav = ({ results, setResults }) => {
             results={results}
           />{" "}
         </Link>
-        {/* {results.length > 0 && <SearchResultPage results={results} />} */}
 
         <img
           onClick={onProfileClick}
