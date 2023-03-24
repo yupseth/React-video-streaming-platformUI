@@ -3,9 +3,12 @@ import requests from "../../../requests";
 import axios from "../../../axios";
 import { useEffect, useState } from "react";
 import style from "./Banner.module.scss";
+import InfoBox from "../../InfoBox";
 
 const Banner = () => {
   const [banner, setBanner] = useState([]);
+  const [isVisibleInfo, setIsVisibleInfo] = useState(false);
+
   useEffect(() => {
     const fetchData = async () => {
       //fetch the first element of all trending (current week)
@@ -17,6 +20,10 @@ const Banner = () => {
     };
     fetchData();
   }, []);
+
+  const toggleVisibilityInfo = () => {
+    setIsVisibleInfo(!isVisibleInfo);
+  };
 
   return (
     <header
@@ -30,9 +37,15 @@ const Banner = () => {
         <h1 className={style.banner__title}>
           {banner?.title || banner?.name || banner?.original_name}
         </h1>
+        {isVisibleInfo && <InfoBox text={banner.overview} />}
         <div className={style.banner__buttons}>
           <button className={style.banner__button}>Play</button>
-          <button className={style.banner__button}>More Info</button>
+          <button
+            className={style.banner__button}
+            onClick={toggleVisibilityInfo}
+          >
+            More Info
+          </button>
         </div>
 
         {/* <h1 className="banner__description">

@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import style from "./Row.module.scss";
 import axios from "../../../axios";
+import InfoBox from "../../InfoBox";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
 const Row = ({ title, fetchURL, isLargeRow }) => {
   const [movies, setMovies] = useState([]);
+  const [showInfo, setShowInfo] = useState(false);
+
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(fetchURL);
@@ -17,6 +20,10 @@ const Row = ({ title, fetchURL, isLargeRow }) => {
     fetchData();
   }, [fetchURL]);
 
+  const displayDescription = () => {
+    setShowInfo(!showInfo);
+  };
+
   return (
     <div className={style.row}>
       <h2> {title}</h2>
@@ -24,6 +31,7 @@ const Row = ({ title, fetchURL, isLargeRow }) => {
       <div className={style.row__posters}>
         {movies.map((movie) => (
           <img
+            onClick={displayDescription}
             key={movie.id}
             className={`${style.row__poster} ${
               isLargeRow && style.row__posterLarge
