@@ -18,6 +18,7 @@ const Nav = ({ results, setResults }) => {
   // const [results, setResults] = useState([]);
   //////////
   const [isVisibleSearch, setIsVisibleSearch] = useState(false);
+  ////////////
 
   const toggleVisibility = () => {
     setIsVisibleSearch(!isVisibleSearch);

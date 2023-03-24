@@ -23,6 +23,7 @@ const Menu = ({ onHideMenu }) => {
         <img src={icon} alt="anima icon" />
       </div>
       <Outlet />
+      <div className={style.outsideClickArea} onClick={onHideMenu} />
     </>
   );
 };
