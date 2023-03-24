@@ -10,13 +10,19 @@ const Menu = ({ onHideMenu }) => {
         <ul className={style.menu__content}>
           <CloseIcon onClick={onHideMenu} className={style.closeIcon} />
           <li>
-            <Link to="/">Home </Link>
+            <Link to="/" onClick={onHideMenu}>
+              Home{" "}
+            </Link>
           </li>
           <li>
-            <Link to="/movies">Movies</Link>
+            <Link to="/movies" onClick={onHideMenu}>
+              Movies
+            </Link>
           </li>
           <li>
-            <Link to="/series">Series</Link>
+            <Link to="/series" onClick={onHideMenu}>
+              Series
+            </Link>
           </li>
         </ul>
         <p className={style.anima_text}>ANIMA</p>
