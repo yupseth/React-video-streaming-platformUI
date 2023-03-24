@@ -18,6 +18,7 @@ const Nav = ({ results, setResults }) => {
   // const [results, setResults] = useState([]);
   //////////
   const [isVisibleSearch, setIsVisibleSearch] = useState(false);
+  ////////////
 
   const toggleVisibility = () => {
     setIsVisibleSearch(!isVisibleSearch);
@@ -59,7 +60,6 @@ const Nav = ({ results, setResults }) => {
             results={results}
           />{" "}
         </Link>
-        {/* {results.length > 0 && <SearchResultPage results={results} />} */}
 
         <img
           onClick={onProfileClick}
