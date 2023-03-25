@@ -1,0 +1,24 @@
+.individual_page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: blue;
+  color: white;
+  .banner {
+    height: 40%;
+    background-color: pink;
+  }
+
+  .movieInfo {
+    height: 20%;
+    background-color: yellow;
+  }
+
+  .trailer_area {
+    height: 40%;
+    background-color: orangered;
+  }
+}

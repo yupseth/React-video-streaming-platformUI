@@ -7,6 +7,7 @@ import Series from "./components/pages/series/Series";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import SearchResultPage from "./components/pages/search/SearchResultPage";
+import IndividualMoviePage from "../src/components/IndividualMoviePage";
 
 //////attempt
 
@@ -28,6 +29,7 @@ function App() {
               <SearchResultPage results={results} setResults={setResults} />
             }
           />
+          <Route path="/individualMovie" element={<IndividualMoviePage />} />
         </Routes>
         <Footer />
       </div>
