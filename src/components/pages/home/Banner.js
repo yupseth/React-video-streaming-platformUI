@@ -37,7 +37,10 @@ const Banner = () => {
         <h1 className={style.banner__title}>
           {banner?.title || banner?.name || banner?.original_name}
         </h1>
-        {isVisibleInfo && <InfoBox text={banner.overview} />}
+
+        <div className={style.info_container}>
+          {isVisibleInfo && <InfoBox text={banner.overview} />}
+        </div>
         <div className={style.banner__buttons}>
           <button className={style.banner__button}>Play</button>
           <button

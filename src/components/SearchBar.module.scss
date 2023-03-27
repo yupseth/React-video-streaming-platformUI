@@ -4,11 +4,15 @@
   align-items: center;
   gap: 5px;
   cursor: pointer;
+  height: 5vh;
+  max-width: 60vw;
 
   input {
-    background: pink;
+    background: black;
+    color: rgba(255, 255, 255, 0.823);
     border: none;
     height: 100%;
+    width: 60vw;
     font-size: 0.7rem;
     &:focus {
       outline: none;

@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-
   color: rgba(255, 255, 255, 0.838);
   object-fit: contain;
   overflow: hidden;
@@ -14,20 +13,31 @@
   .banner__contents {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     padding-top: 4vh;
     padding-left: 4vw;
     height: 60vh;
     width: 100%;
 
     .banner__title {
-      font-size: 4rem;
+      display: inline-block;
+      font-size: 3.5rem;
+      min-height: 40%;
+      height: auto;
+      width: 50%;
       font-family: "Bebas Neue";
+    }
 
-      width: 40vw;
+    .info_container {
+      display: flex;
+      height: 20%;
+      // background-color: pink;
+      box-sizing: border-box;
+      display: inline-block;
     }
 
     .banner__buttons {
+      max-height: 20%;
       display: flex;
       gap: 10px;
       .banner__button {
@@ -38,7 +48,6 @@
         border-radius: 3px;
 
         padding: 0.5rem 1.9rem;
-        //   margin-right: 1rem;
         background-color: rgba(51, 51, 51, 0.5);
 
         &:hover {
@@ -52,15 +61,12 @@
 
   .bannerFadeBottom {
     width: 100%;
-    height: 200px;
-
-    // background-color: hotpink;
+    height: 20%;
     background-image: linear-gradient(
       180deg,
       transparent 0%,
       rgba(0, 0, 0, 0.719) 30%,
-      black 100%
+      black 90%
     );
-    // background-image: linear-gradient(to top, black 0%, transparent 70%);
   }
 }
