@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   display: flex;
-  width: 100vw;
+  width: 92gvw;
   padding-left: 4vw;
   padding-right: 4vw;
   height: 7vh;
@@ -25,8 +25,9 @@
   }
 
   .right {
-    position: fixed;
-    right: 20px;
+    position: relative;
+    // right: 20px;
+
     display: flex;
     gap: 10px;
     align-items: center;
@@ -43,4 +44,10 @@
 
 .nav__black {
   background: rgba(0, 0, 0, 0.686);
+}
+
+@media only screen and (min-width: 600px) {
+  // .nav {
+  //   width: 92.5vw;
+  // }
 }
