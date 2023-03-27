@@ -68,3 +68,19 @@
     );
   }
 }
+
+@media only screen and (min-width: 790px) {
+  .banner {
+    background-size: contain;
+    background-position: center center;
+    .banner__contents {
+      display: flex;
+      gap: 20px;
+
+      .banner__title {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
