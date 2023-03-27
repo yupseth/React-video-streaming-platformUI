@@ -15,3 +15,12 @@
     color: white;
   }
 }
+
+@media only screen and (min-width: 650px) {
+  .info_container {
+    width: 50%;
+    p {
+      font-size: 12px;
+    }
+  }
+} ;
