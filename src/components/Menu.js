@@ -2,6 +2,7 @@ import style from "./Menu.module.scss";
 import CloseIcon from "@mui/icons-material/Close";
 import icon from "../img/Anima_Icon.png";
 import { Link, Outlet } from "react-router-dom";
+import { useRef, useEffect } from "react";
 
 const Menu = ({ onHideMenu }) => {
   const linkStyle = {
@@ -9,11 +10,25 @@ const Menu = ({ onHideMenu }) => {
     color: "rgba(231, 231, 231, 0.81)",
     fontFamily: "Nunito Sans",
   };
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        onHideMenu();
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuRef]);
 
   return (
     <>
       <div className={style.menu}>
-        <ul className={style.menu__content}>
+        <ul className={style.menu__content} ref={menuRef}>
           <CloseIcon onClick={onHideMenu} className={style.closeIcon} />
 
           <Link to="/" onClick={onHideMenu} style={linkStyle}>
@@ -32,7 +47,6 @@ const Menu = ({ onHideMenu }) => {
         <img src={icon} alt="anima icon" />
       </div>
       <Outlet />
-      <div className={style.outsideClickArea} onClick={onHideMenu} />
     </>
   );
 };

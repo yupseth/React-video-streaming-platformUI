@@ -32,4 +32,12 @@
       width: 100%;
     }
   }
+
+  .errorMessage {
+    height: 30vh;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

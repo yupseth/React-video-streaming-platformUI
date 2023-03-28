@@ -12,14 +12,14 @@ import IndividualMoviePage from "../src/components/IndividualMoviePage";
 function App() {
   const [results, setResults] = useState([]);
   const [currentContent, setCurrentContent] = useState({});
-  const onSelectContent = (id, title, description) => {
-    console.log("S-A STRIGAT");
+  const onSelectContent = (id, title, description, mediaType) => {
     setCurrentContent((prevState) => {
       return {
         ...prevState,
         id,
         title,
         description,
+        mediaType,
       };
     });
   };
@@ -34,13 +34,11 @@ function App() {
           />
           <Route
             path="/movies"
-            element={<Movies />}
-            onSelectContent={onSelectContent}
+            element={<Movies onSelectContent={onSelectContent} />}
           />
           <Route
             path="/series"
-            element={<Series />}
-            onSelectContent={onSelectContent}
+            element={<Series onSelectContent={onSelectContent} />}
           />
           <Route
             path="/search"

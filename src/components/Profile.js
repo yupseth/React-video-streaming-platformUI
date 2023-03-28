@@ -1,6 +1,6 @@
 import style from "./Profile.module.scss";
 
-const Profile = () => {
+const Profile = ({ fRef }) => {
   return (
     <div className={style.profile}>
       <ul className={style.profile__content}>
@@ -8,7 +8,9 @@ const Profile = () => {
         <li>Switch Profile</li>
         <li>Settings</li>
       </ul>
-      <button className={style.logout}>Log out</button>
+      <button className={style.logout} ref={fRef}>
+        Log out
+      </button>
     </div>
   );
 };

@@ -23,10 +23,11 @@ const Row = ({ title, fetchURL, isLargeRow, onSelectContent }) => {
     fetchData();
   }, [fetchURL]);
 
-  const handleClick = (id, title, description) => {
-    onSelectContent(id, title, description);
+  const handleClick = (id, title, description, mediaType) => {
+    onSelectContent(id, title, description, mediaType);
     navigate("/individualMovie");
   };
+
   return (
     <div className={style.row}>
       <h2> {title}</h2>
@@ -34,7 +35,14 @@ const Row = ({ title, fetchURL, isLargeRow, onSelectContent }) => {
       <div className={style.row__posters}>
         {movies.map((movie) => (
           <Thumbnail
-            onClick={() => handleClick(movie.id, movie.title, movie.overview)}
+            onClick={() =>
+              handleClick(
+                movie.id,
+                movie.title ?? movie.name,
+                movie.overview,
+                movie.title ? "movie" : "tv"
+              )
+            }
             id={movie.id}
             key={movie.id}
             className={`row__poster ${isLargeRow ? "row__posterLarge" : ""}`}
