@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Thumbnail from "../../Thumbnail";
 import style from "./Row.module.scss";
 import axios from "../../../axios";
 // import InfoBox from "../../InfoBox";
@@ -32,12 +33,21 @@ const Row = ({ title, fetchURL, isLargeRow }) => {
 
       <div className={style.row__posters}>
         {movies.map((movie) => (
-          <img
+          // <img
+          //   onClick={() => navigate("/individualMovie")}
+          //   key={movie.id}
+          //   className={`${style.row__poster} ${
+          //     isLargeRow && style.row__posterLarge
+          //   }`}
+          //   src={`${base_url}${
+          //     isLargeRow ? movie.poster_path : movie.backdrop_path
+          //   }`}
+          //   alt={movie.name}
+          // />
+          <Thumbnail
             onClick={() => navigate("/individualMovie")}
             key={movie.id}
-            className={`${style.row__poster} ${
-              isLargeRow && style.row__posterLarge
-            }`}
+            className={`row__poster ${isLargeRow ? "row__posterLarge" : ""}`}
             src={`${base_url}${
               isLargeRow ? movie.poster_path : movie.backdrop_path
             }`}

@@ -20,6 +20,20 @@ const GridLayout = ({ elements }) => {
   );
 };
 
+/**
+ * <img
+            onClick={() => navigate("/individualMovie")}
+            key={movie.id}
+            className={`${style.row__poster} ${
+              isLargeRow && style.row__posterLarge
+            }`}
+            src={`${base_url}${
+              isLargeRow ? movie.poster_path : movie.backdrop_path
+            }`}
+            alt={movie.name}
+          />
+ */
+
 export default GridLayout;
 
 // : movie.backdrop_path

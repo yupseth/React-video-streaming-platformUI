@@ -4,6 +4,7 @@ import axios from "../../../axios";
 import { useEffect, useState } from "react";
 import style from "./Banner.module.scss";
 import InfoBox from "../../InfoBox";
+import YouTube from "react-youtube";
 
 const Banner = () => {
   const [banner, setBanner] = useState([]);
@@ -42,7 +43,9 @@ const Banner = () => {
           {isVisibleInfo && <InfoBox text={banner.overview} />}
         </div>
         <div className={style.banner__buttons}>
+          {/* ///////////////// */}
           <button className={style.banner__button}>Play</button>
+          {/* /////////////////// */}
           <button
             className={style.banner__button}
             onClick={toggleVisibilityInfo}
