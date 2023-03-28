@@ -1,3 +1,4 @@
+import Thumbnail from "./Thumbnail";
 import style from "./GridLayout.module.scss";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
@@ -8,9 +9,9 @@ const GridLayout = ({ elements }) => {
       {elements.map(
         (movie) =>
           movie.poster_path && (
-            <img
+            <Thumbnail
               key={movie.id}
-              className={style.row__poster}
+              className="row__poster--variant"
               src={`${base_url}${movie.poster_path}`}
               alt={movie.name}
             />

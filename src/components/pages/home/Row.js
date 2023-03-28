@@ -33,19 +33,9 @@ const Row = ({ title, fetchURL, isLargeRow }) => {
 
       <div className={style.row__posters}>
         {movies.map((movie) => (
-          // <img
-          //   onClick={() => navigate("/individualMovie")}
-          //   key={movie.id}
-          //   className={`${style.row__poster} ${
-          //     isLargeRow && style.row__posterLarge
-          //   }`}
-          //   src={`${base_url}${
-          //     isLargeRow ? movie.poster_path : movie.backdrop_path
-          //   }`}
-          //   alt={movie.name}
-          // />
           <Thumbnail
             onClick={() => navigate("/individualMovie")}
+            id={movie.id}
             key={movie.id}
             className={`row__poster ${isLargeRow ? "row__posterLarge" : ""}`}
             src={`${base_url}${

@@ -10,6 +10,12 @@
   }
 }
 
+.row__poster--variant {
+  object-fit: contain;
+  height: 50vh;
+  width: 240px;
+}
+
 .row__posterLarge {
   height: 60vh;
   &:hover {
