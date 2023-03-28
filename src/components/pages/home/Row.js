@@ -7,7 +7,7 @@ import axios from "../../../axios";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
-const Row = ({ title, fetchURL, isLargeRow }) => {
+const Row = ({ title, fetchURL, isLargeRow, onSelectContent }) => {
   const navigate = useNavigate();
   const [movies, setMovies] = useState([]);
   // const [showInfo, setShowInfo] = useState(false);
@@ -23,10 +23,10 @@ const Row = ({ title, fetchURL, isLargeRow }) => {
     fetchData();
   }, [fetchURL]);
 
-  // const displayDescription = () => {
-  //   setShowInfo(!showInfo);
-  // };
-
+  const handleClick = (id, title, description) => {
+    onSelectContent(id, title, description);
+    navigate("/individualMovie");
+  };
   return (
     <div className={style.row}>
       <h2> {title}</h2>
@@ -34,7 +34,7 @@ const Row = ({ title, fetchURL, isLargeRow }) => {
       <div className={style.row__posters}>
         {movies.map((movie) => (
           <Thumbnail
-            onClick={() => navigate("/individualMovie")}
+            onClick={() => handleClick(movie.id, movie.title, movie.overview)}
             id={movie.id}
             key={movie.id}
             className={`row__poster ${isLargeRow ? "row__posterLarge" : ""}`}

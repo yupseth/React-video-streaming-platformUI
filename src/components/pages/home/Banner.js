@@ -4,7 +4,6 @@ import axios from "../../../axios";
 import { useEffect, useState } from "react";
 import style from "./Banner.module.scss";
 import InfoBox from "../../InfoBox";
-import YouTube from "react-youtube";
 
 const Banner = () => {
   const [banner, setBanner] = useState([]);

@@ -1,11 +1,11 @@
 import Banner from "./Banner";
 import Rows from "./Rows";
 
-const Home = () => {
+const Home = ({ onSelectContent }) => {
   return (
     <>
       <Banner />
-      <Rows />
+      <Rows onSelectContent={onSelectContent} />
     </>
   );
 };

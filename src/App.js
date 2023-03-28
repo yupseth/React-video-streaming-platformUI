@@ -9,27 +9,53 @@ import Footer from "./components/Footer";
 import SearchResultPage from "./components/pages/search/SearchResultPage";
 import IndividualMoviePage from "../src/components/IndividualMoviePage";
 
-//////attempt
-
-/////////////
-
 function App() {
   const [results, setResults] = useState([]);
+  const [currentContent, setCurrentContent] = useState({});
+  const onSelectContent = (id, title, description) => {
+    console.log("S-A STRIGAT");
+    setCurrentContent((prevState) => {
+      return {
+        ...prevState,
+        id,
+        title,
+        description,
+      };
+    });
+  };
   return (
     <Router>
       <div className="app">
         <Nav results={results} setResults={setResults} />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/movies" element={<Movies />} />
-          <Route path="/series" element={<Series />} />
+          <Route
+            path="/"
+            element={<Home onSelectContent={onSelectContent} />}
+          />
+          <Route
+            path="/movies"
+            element={<Movies />}
+            onSelectContent={onSelectContent}
+          />
+          <Route
+            path="/series"
+            element={<Series />}
+            onSelectContent={onSelectContent}
+          />
           <Route
             path="/search"
             element={
-              <SearchResultPage results={results} setResults={setResults} />
+              <SearchResultPage
+                results={results}
+                setResults={setResults}
+                onSelectContent={onSelectContent}
+              />
             }
           />
-          <Route path="/individualMovie" element={<IndividualMoviePage />} />
+          <Route
+            path="/individualMovie"
+            element={<IndividualMoviePage selectedContent={currentContent} />}
+          />
         </Routes>
         <Footer />
       </div>
