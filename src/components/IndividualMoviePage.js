@@ -12,6 +12,9 @@ const IndividualMoviePage = ({ selectedContent }) => {
     JSON.parse(localStorage.getItem("lastContent")).key
   );
 
+  selectedContent.id =
+    selectedContent.id ?? JSON.parse(localStorage.getItem("lastContent")).id;
+
   selectedContent.title =
     selectedContent.title ??
     JSON.parse(localStorage.getItem("lastContent")).title;
@@ -19,6 +22,10 @@ const IndividualMoviePage = ({ selectedContent }) => {
   selectedContent.description =
     selectedContent.description ??
     JSON.parse(localStorage.getItem("lastContent")).description;
+
+  selectedContent.mediaType =
+    selectedContent.mediaType ??
+    JSON.parse(localStorage.getItem("lastContent")).mediaType;
 
   const updateWidth = () => {
     if (videoContainer.current) {
@@ -63,8 +70,10 @@ const IndividualMoviePage = ({ selectedContent }) => {
       "lastContent",
       JSON.stringify({
         key,
+        id: selectedContent.id,
         title: selectedContent.title,
         description: selectedContent.description,
+        mediaType: selectedContent.mediaType,
       })
     );
   };
@@ -102,6 +111,7 @@ const IndividualMoviePage = ({ selectedContent }) => {
         </div>
 
         <div className={style.movieInfo}>
+          <h1>{selectedContent.title}</h1>
           <h3>{selectedContent.description}</h3>
         </div>
       </div>
