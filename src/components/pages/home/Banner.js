@@ -49,7 +49,7 @@ const Banner = () => {
             className={style.banner__button}
             onClick={toggleVisibilityInfo}
           >
-            More Info
+            {!isVisibleInfo ? "More Info" : "Less Info"}
           </button>
         </div>
 
