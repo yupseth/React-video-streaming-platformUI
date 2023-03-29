@@ -2,7 +2,7 @@
   flex-shrink: 0;
   object-fit: cover;
   width: 300px;
-  height: 25vh;
+  height: 180px;
   transition: filter 450ms;
 
   background-position: center center;
@@ -14,7 +14,6 @@
   cursor: pointer;
 
   &:hover {
-    box-shadow: 0px 0px 10px rgba(65, 64, 64, 0.596);
     transition: background-size 8000ms ease-out;
     filter: brightness(110%);
     background-size: 120%;
@@ -24,10 +23,11 @@
 .row__poster--variant {
   background-position: center center;
   background-size: 110%;
+  background-repeat: no-repeat;
 
   cursor: pointer;
   object-fit: cover;
-  height: 50vh;
+  height: 360px;
   width: 240px;
   filter: brightness(80%);
   transition: filter 450ms;
@@ -40,6 +40,6 @@
 }
 
 .row__posterLarge {
-  height: 60vh;
+  height: 430px;
   width: 270px;
 }
