@@ -17,6 +17,7 @@
     background: transparent;
     color: black;
     .button__back {
+      display: flex;
       align-self: flex-start;
       background: transparent;
       color: rgba(224, 224, 224, 0.783);

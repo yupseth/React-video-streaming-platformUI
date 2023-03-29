@@ -3,7 +3,7 @@ import axios from "../axios";
 import requests from "../requests";
 import style from "./IndividualMoviePage.module.scss";
 import YouTube from "react-youtube";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 
 const IndividualMoviePage = ({ selectedContent }) => {
@@ -13,6 +13,8 @@ const IndividualMoviePage = ({ selectedContent }) => {
   const [trailerKey, setTrailerKey] = useState(
     JSON.parse(localStorage.getItem("lastContent"))?.key
   );
+
+  const navigate = useNavigate();
 
   selectedContent.id =
     selectedContent.id ?? JSON.parse(localStorage.getItem("lastContent"))?.id;
@@ -50,6 +52,19 @@ const IndividualMoviePage = ({ selectedContent }) => {
     event.target.unMute();
   };
 
+  const saveLastContent = (key) => {
+    localStorage.setItem(
+      "lastContent",
+      JSON.stringify({
+        key,
+        id: selectedContent.id,
+        title: selectedContent.title,
+        description: selectedContent.description,
+        mediaType: selectedContent.mediaType,
+      })
+    );
+  };
+
   useEffect(() => {
     const trailerReq = requests
       .find((req) => req.name === "Trailer")
@@ -67,20 +82,7 @@ const IndividualMoviePage = ({ selectedContent }) => {
       return request;
     };
     fetchData();
-  }, []);
-
-  const saveLastContent = (key) => {
-    localStorage.setItem(
-      "lastContent",
-      JSON.stringify({
-        key,
-        id: selectedContent.id,
-        title: selectedContent.title,
-        description: selectedContent.description,
-        mediaType: selectedContent.mediaType,
-      })
-    );
-  };
+  }, [saveLastContent, selectedContent.id, selectedContent.mediaType]);
 
   const widthRatio = 9 / 16;
   const options = {
@@ -98,10 +100,8 @@ const IndividualMoviePage = ({ selectedContent }) => {
   return (
     <div className={style.individual_page} ref={videoContainer}>
       <div className={style.individual_page__content}>
-        <button className={style.button__back}>
-          <Link style={{ display: "flex", color: "#999" }} to="/">
-            <ChevronLeftIcon />
-          </Link>
+        <button className={style.button__back} onClick={() => navigate(-1)}>
+          <ChevronLeftIcon />
         </button>
         <div className={style.trailer_area}>
           {videoContainerWidth !== 0 && trailerKey && foundTrailer ? (

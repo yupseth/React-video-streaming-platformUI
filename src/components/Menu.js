@@ -23,7 +23,7 @@ const Menu = ({ onHideMenu }) => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [menuRef]);
+  }, [menuRef, onHideMenu]);
 
   return (
     <>

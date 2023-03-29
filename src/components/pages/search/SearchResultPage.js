@@ -1,15 +1,14 @@
 import style from "./SearchResultPage.module.scss";
 import GridLayout from "../../GridLayout";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SearchResultPage = ({ results, onSelectContent }) => {
+  const navigate = useNavigate();
   return (
     <div className={style.search}>
-      <button className={style.button__back}>
-        <Link style={{ display: "flex", color: "#999" }} to="/">
-          <ChevronLeftIcon />
-        </Link>
+      <button className={style.button__back} onClick={() => navigate(-1)}>
+        <ChevronLeftIcon />
       </button>
       <div className={style.search__container}>
         {results.length === 0 ? (
