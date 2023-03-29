@@ -4,23 +4,19 @@
   width: 300px;
   height: 25vh;
   transition: filter 450ms;
-  // transition: background-size 9000ms ease-in;
-  //new
-  // overflow: hidden;
-  ////
+
   background-position: center center;
   background-size: 110%;
-  // background-repeat: no-repeat;
 
   filter: brightness(80%);
   box-sizing: border-box;
   cursor: pointer;
 
   &:hover {
+    box-shadow: 0px 0px 10px rgba(65, 64, 64, 0.596);
     transition: background-size 8000ms ease-out;
     filter: brightness(110%);
     background-size: 120%;
-    // transform: scale(2.08);
   }
 }
 
@@ -38,20 +34,11 @@
     filter: brightness(110%);
     transition: background-size 8000ms ease-out;
     background-size: 120%;
+    box-shadow: 0px 0px 10px rgba(87, 86, 86, 0.596);
   }
 }
 
 .row__posterLarge {
   height: 60vh;
-  // &:hover {
-
-  /// NEW
-  // flex-shrink: 0;
   width: 270px;
-  // margin: 0;
-  // overflow: hidden;
-  // }
-
-  &:hover {
-  }
 }
