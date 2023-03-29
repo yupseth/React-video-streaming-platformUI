@@ -33,6 +33,8 @@ const IndividualMoviePage = ({ selectedContent }) => {
       setVideoContainerWidth(width);
     }
   };
+  useEffect(() => window.scrollTo(0, 0));
+
   useEffect(() => {
     updateWidth();
     window.addEventListener("resize", updateWidth);

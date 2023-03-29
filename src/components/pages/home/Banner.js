@@ -6,7 +6,7 @@ import style from "./Banner.module.scss";
 import InfoBox from "../../InfoBox";
 import { useNavigate } from "react-router-dom";
 
-const Banner = () => {
+const Banner = ({ onSelectContent }) => {
   const navigate = useNavigate();
   const [banner, setBanner] = useState([]);
   const [isVisibleInfo, setIsVisibleInfo] = useState(false);
@@ -26,6 +26,13 @@ const Banner = () => {
   const toggleVisibilityInfo = () => {
     setIsVisibleInfo(!isVisibleInfo);
   };
+
+  const handleClick = (id, title, description, mediaType) => {
+    onSelectContent(id, title, description, mediaType);
+    navigate("/individualMovie");
+  };
+
+  console.log("banner:", banner);
 
   return (
     <header
@@ -47,7 +54,14 @@ const Banner = () => {
           {/* ///////////////// */}
           <button
             className={style.banner__button}
-            onClick={() => navigate("/individualMovie")}
+            onClick={() =>
+              handleClick(
+                banner.id,
+                banner.title ?? banner.name,
+                banner.overview,
+                banner.media_type
+              )
+            }
           >
             Play
           </button>

@@ -46,6 +46,9 @@
 
     .trailer_area {
       width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 
@@ -57,3 +60,11 @@
     align-items: center;
   }
 }
+
+// @media only screen and (min-width: 750px) {
+//   .trailer_area {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//   }
+// }

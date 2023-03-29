@@ -4,7 +4,7 @@ import Rows from "./Rows";
 const Home = ({ onSelectContent }) => {
   return (
     <>
-      <Banner />
+      <Banner onSelectContent={onSelectContent} />
       <Rows onSelectContent={onSelectContent} />
     </>
   );
