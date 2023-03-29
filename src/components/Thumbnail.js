@@ -10,7 +10,17 @@ const Thumbnail = ({ onClick, className, src, alt }) => {
     .map((cls) => style[cls])
     .join(" ");
 
-  return <img onClick={onClick} className={classes} src={src} alt={alt} />;
+  // return <img onClick={onClick} className={classes} src={src} alt={alt} />;
+  return (
+    <div
+      onClick={onClick}
+      className={classes}
+      style={{
+        backgroundImage: `url(${src})`,
+      }}
+      // alt={alt}
+    />
+  );
 };
 
 export default Thumbnail;

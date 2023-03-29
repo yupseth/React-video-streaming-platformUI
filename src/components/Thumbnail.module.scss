@@ -1,24 +1,57 @@
 .row__poster {
+  flex-shrink: 0;
   object-fit: cover;
-  width: 100%;
+  width: 300px;
   height: 25vh;
-  margin-right: 10px;
-  transition: transform 450ms;
+  transition: filter 450ms;
+  // transition: background-size 9000ms ease-in;
+  //new
+  // overflow: hidden;
+  ////
+  background-position: center center;
+  background-size: 110%;
+  // background-repeat: no-repeat;
+
+  filter: brightness(80%);
+  box-sizing: border-box;
+  cursor: pointer;
 
   &:hover {
-    transform: scale(1.08);
+    transition: background-size 8000ms ease-out;
+    filter: brightness(110%);
+    background-size: 120%;
+    // transform: scale(2.08);
   }
 }
 
 .row__poster--variant {
-  object-fit: contain;
+  background-position: center center;
+  background-size: 110%;
+
+  cursor: pointer;
+  object-fit: cover;
   height: 50vh;
   width: 240px;
+  filter: brightness(80%);
+  transition: filter 450ms;
+  &:hover {
+    filter: brightness(110%);
+    transition: background-size 8000ms ease-out;
+    background-size: 120%;
+  }
 }
 
 .row__posterLarge {
   height: 60vh;
+  // &:hover {
+
+  /// NEW
+  // flex-shrink: 0;
+  width: 270px;
+  // margin: 0;
+  // overflow: hidden;
+  // }
+
   &:hover {
-    transform: scale(1.09);
   }
 }
