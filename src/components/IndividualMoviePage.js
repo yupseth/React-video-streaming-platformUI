@@ -3,6 +3,8 @@ import axios from "../axios";
 import requests from "../requests";
 import style from "./IndividualMoviePage.module.scss";
 import YouTube from "react-youtube";
+import { Link } from "react-router-dom";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 
 const IndividualMoviePage = ({ selectedContent }) => {
   const videoContainer = useRef(null);
@@ -33,7 +35,7 @@ const IndividualMoviePage = ({ selectedContent }) => {
       setVideoContainerWidth(width);
     }
   };
-  useEffect(() => window.scrollTo(0, 0));
+  useEffect(() => window.scrollTo(0, 0), []);
 
   useEffect(() => {
     updateWidth();
@@ -96,6 +98,11 @@ const IndividualMoviePage = ({ selectedContent }) => {
   return (
     <div className={style.individual_page} ref={videoContainer}>
       <div className={style.individual_page__content}>
+        <button className={style.button__back}>
+          <Link style={{ display: "flex", color: "#999" }} to="/">
+            <ChevronLeftIcon />
+          </Link>
+        </button>
         <div className={style.trailer_area}>
           {videoContainerWidth !== 0 && trailerKey && foundTrailer ? (
             <YouTube
