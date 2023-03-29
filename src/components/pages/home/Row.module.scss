@@ -1,11 +1,8 @@
 //mobile first
 
 .row {
-  // margin-top: 30px;
   padding: 0.5rem;
   padding-left: 0;
-
-  // background-color: black;
 
   background: transparent;
   h2 {
@@ -14,7 +11,6 @@
     font-family: "Nunito Sans";
     font-size: 1rem;
     font-weight: 600;
-    // letter-spacing: 1px;
   }
 
   .row__posters {
@@ -25,6 +21,15 @@
     &::-webkit-scrollbar {
       display: none;
     }
+
+    // NEW
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    gap: 20px;
+    /* flex-wrap: wrap; */
+    flex-direction: row;
+    // END NEW
 
     // .row__poster {
     //   object-fit: cover;

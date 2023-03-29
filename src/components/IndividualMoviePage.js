@@ -3,6 +3,8 @@ import axios from "../axios";
 import requests from "../requests";
 import style from "./IndividualMoviePage.module.scss";
 import YouTube from "react-youtube";
+import { Link } from "react-router-dom";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 
 const IndividualMoviePage = ({ selectedContent }) => {
   const videoContainer = useRef(null);
@@ -12,6 +14,9 @@ const IndividualMoviePage = ({ selectedContent }) => {
     JSON.parse(localStorage.getItem("lastContent")).key
   );
 
+  selectedContent.id =
+    selectedContent.id ?? JSON.parse(localStorage.getItem("lastContent")).id;
+
   selectedContent.title =
     selectedContent.title ??
     JSON.parse(localStorage.getItem("lastContent")).title;
@@ -20,12 +25,18 @@ const IndividualMoviePage = ({ selectedContent }) => {
     selectedContent.description ??
     JSON.parse(localStorage.getItem("lastContent")).description;
 
+  selectedContent.mediaType =
+    selectedContent.mediaType ??
+    JSON.parse(localStorage.getItem("lastContent")).mediaType;
+
   const updateWidth = () => {
     if (videoContainer.current) {
       const width = videoContainer.current.getBoundingClientRect().width;
       setVideoContainerWidth(width);
     }
   };
+  useEffect(() => window.scrollTo(0, 0), []);
+
   useEffect(() => {
     updateWidth();
     window.addEventListener("resize", updateWidth);
@@ -63,8 +74,10 @@ const IndividualMoviePage = ({ selectedContent }) => {
       "lastContent",
       JSON.stringify({
         key,
+        id: selectedContent.id,
         title: selectedContent.title,
         description: selectedContent.description,
+        mediaType: selectedContent.mediaType,
       })
     );
   };
@@ -85,6 +98,11 @@ const IndividualMoviePage = ({ selectedContent }) => {
   return (
     <div className={style.individual_page} ref={videoContainer}>
       <div className={style.individual_page__content}>
+        <button className={style.button__back}>
+          <Link style={{ display: "flex", color: "#999" }} to="/">
+            <ChevronLeftIcon />
+          </Link>
+        </button>
         <div className={style.trailer_area}>
           {videoContainerWidth !== 0 && trailerKey && foundTrailer ? (
             <YouTube
@@ -102,6 +120,7 @@ const IndividualMoviePage = ({ selectedContent }) => {
         </div>
 
         <div className={style.movieInfo}>
+          <h1>{selectedContent.title}</h1>
           <h3>{selectedContent.description}</h3>
         </div>
       </div>

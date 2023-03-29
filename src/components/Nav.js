@@ -5,7 +5,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Menu from "./Menu";
 import Profile from "./Profile";
 import SearchBar from "./SearchBar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Nav = ({ results, setResults }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,6 +18,7 @@ const Nav = ({ results, setResults }) => {
   //////////
   const [isVisibleSearch, setIsVisibleSearch] = useState(false);
   ////////////
+  const navigate = useNavigate();
   const profileRef = useRef(null);
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -57,7 +58,12 @@ const Nav = ({ results, setResults }) => {
       <MenuIcon className={style.menu_icon} onClick={showMenu} />
       {isVisibleMenu && <Menu onHideMenu={showMenu} />}
 
-      <img className={style.nav__logo} src={logo} alt="anima logo" />
+      <img
+        className={style.nav__logo}
+        src={logo}
+        alt="anima logo"
+        onClick={() => navigate("/")}
+      />
 
       <div className={style.right}>
         <Link to="/search">
