@@ -52,19 +52,6 @@ const IndividualMoviePage = ({ selectedContent }) => {
     event.target.unMute();
   };
 
-  const saveLastContent = (key) => {
-    localStorage.setItem(
-      "lastContent",
-      JSON.stringify({
-        key,
-        id: selectedContent.id,
-        title: selectedContent.title,
-        description: selectedContent.description,
-        mediaType: selectedContent.mediaType,
-      })
-    );
-  };
-
   useEffect(() => {
     const trailerReq = requests
       .find((req) => req.name === "Trailer")
@@ -77,12 +64,24 @@ const IndividualMoviePage = ({ selectedContent }) => {
       const res = request.data.results.find((res) => res.type === "Trailer");
       setFoundTrailer(!!res);
       setTrailerKey(() => res?.key);
+      const saveLastContent = (key) => {
+        localStorage.setItem(
+          "lastContent",
+          JSON.stringify({
+            key,
+            id: selectedContent.id,
+            title: selectedContent.title,
+            description: selectedContent.description,
+            mediaType: selectedContent.mediaType,
+          })
+        );
+      };
       saveLastContent(res?.key);
 
       return request;
     };
     fetchData();
-  }, [saveLastContent, selectedContent.id, selectedContent.mediaType]);
+  }, [selectedContent.id, selectedContent.mediaType]);
 
   const widthRatio = 9 / 16;
   const options = {
