@@ -4,8 +4,10 @@ import axios from "../../../axios";
 import { useEffect, useState } from "react";
 import style from "./Banner.module.scss";
 import InfoBox from "../../InfoBox";
+import { useNavigate } from "react-router-dom";
 
 const Banner = () => {
+  const navigate = useNavigate();
   const [banner, setBanner] = useState([]);
   const [isVisibleInfo, setIsVisibleInfo] = useState(false);
 
@@ -43,7 +45,12 @@ const Banner = () => {
         </div>
         <div className={style.banner__buttons}>
           {/* ///////////////// */}
-          <button className={style.banner__button}>Play</button>
+          <button
+            className={style.banner__button}
+            onClick={() => navigate("/individualMovie")}
+          >
+            Play
+          </button>
           {/* /////////////////// */}
           <button
             className={style.banner__button}
