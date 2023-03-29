@@ -1,6 +1,6 @@
-import Thumbnail from "./Thumbnail";
 import style from "./GridLayout.module.scss";
 import { useNavigate } from "react-router-dom";
+import Thumbnail from "./Thumbnail";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
