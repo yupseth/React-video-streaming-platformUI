@@ -1,6 +1,5 @@
 .row {
   padding: 0.5rem;
-  padding-left: 0;
 
   background: transparent;
   h2 {
@@ -14,16 +13,44 @@
   .row__posters {
     display: flex;
     overflow-y: hidden;
-    overflow-x: scroll;
+    overflow-x: auto;
+    gap: 20px;
+    flex-direction: row;
+    overscroll-behavior-inline: contain;
 
     &::-webkit-scrollbar {
       display: none;
     }
+  }
 
+  .row__wrapper {
     display: flex;
-    overflow-y: hidden;
-    overflow-x: scroll;
-    gap: 20px;
-    flex-direction: row;
+    gap: 4px;
+  }
+}
+
+.scroll__button {
+  display: none;
+  color: green;
+}
+
+@media only screen and (min-width: 750px) {
+  .scroll__button {
+    display: block;
+    display: flex;
+    width: 50px;
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 6px;
+    background: transparent;
+    color: #ffffff46;
+    cursor: pointer;
+    transition: color 450ms ease;
+
+    &:hover {
+      color: #ffffffae;
+    }
   }
 }

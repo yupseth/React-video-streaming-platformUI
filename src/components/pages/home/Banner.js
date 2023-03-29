@@ -62,7 +62,6 @@ const Banner = ({ onSelectContent }) => {
           >
             Play
           </button>
-          {/* /////////////////// */}
           <button
             className={style.banner__button}
             onClick={toggleVisibilityInfo}
@@ -70,10 +69,6 @@ const Banner = ({ onSelectContent }) => {
             {!isVisibleInfo ? "More Info" : "Less Info"}
           </button>
         </div>
-
-        {/* <h1 className="banner__description">
-          {truncate(movie?.overview, 150)}
-        </h1> */}
       </div>
       <div className={style.bannerFadeBottom}></div>
     </header>

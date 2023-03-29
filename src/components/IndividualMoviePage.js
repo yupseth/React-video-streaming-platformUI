@@ -118,7 +118,7 @@ const IndividualMoviePage = ({ selectedContent }) => {
             />
           ) : (
             <h3 className={style.errorMessage}>
-              Unfortunately, the content you've chosen doesn't have a trailer :(
+              Unfortunately, the content you've chosen doesn't have a trailer
             </h3>
           )}
         </div>

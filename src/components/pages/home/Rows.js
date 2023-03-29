@@ -2,7 +2,7 @@ import Row from "./Row";
 import requests from "../../../requests";
 import style from "./Rows.module.scss";
 
-//generator function for Row IDs
+// generator function for Row IDs
 const Rows = ({ onSelectContent }) => {
   function* idGenerator() {
     let id = 0;
