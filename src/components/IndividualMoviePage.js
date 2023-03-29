@@ -81,7 +81,12 @@ const IndividualMoviePage = ({ selectedContent }) => {
       return request;
     };
     fetchData();
-  }, [selectedContent.id, selectedContent.mediaType]);
+  }, [
+    selectedContent.id,
+    selectedContent.mediaType,
+    selectedContent.description,
+    selectedContent.title,
+  ]);
 
   const widthRatio = 9 / 16;
   const options = {
