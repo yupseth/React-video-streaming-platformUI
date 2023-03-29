@@ -9,15 +9,8 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Nav = ({ results, setResults }) => {
   const [isScrolled, setIsScrolled] = useState(false);
-  //////////
   const [isVisibleMenu, setIsVisibleMenu] = useState(false);
-  //////////
   const [isVisibleProfile, setIsVisibleProfile] = useState(false);
-  //////////
-  // const [results, setResults] = useState([]);
-  //////////
-  const [isVisibleSearch, setIsVisibleSearch] = useState(false);
-  ////////////
   const navigate = useNavigate();
   const profileRef = useRef(null);
   useEffect(() => {

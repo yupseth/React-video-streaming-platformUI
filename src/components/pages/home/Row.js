@@ -3,14 +3,12 @@ import { useNavigate } from "react-router-dom";
 import Thumbnail from "../../Thumbnail";
 import style from "./Row.module.scss";
 import axios from "../../../axios";
-// import InfoBox from "../../InfoBox";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
 const Row = ({ title, fetchURL, isLargeRow, onSelectContent }) => {
   const navigate = useNavigate();
   const [movies, setMovies] = useState([]);
-  // const [showInfo, setShowInfo] = useState(false);
 
   useEffect(() => {
     async function fetchData() {

@@ -1,4 +1,3 @@
-// import requests from "../requests";
 import requests from "../../../requests";
 import axios from "../../../axios";
 import { useEffect, useState } from "react";
@@ -31,8 +30,6 @@ const Banner = ({ onSelectContent }) => {
     onSelectContent(id, title, description, mediaType);
     navigate("/individualMovie");
   };
-
-  console.log("banner:", banner);
 
   return (
     <header

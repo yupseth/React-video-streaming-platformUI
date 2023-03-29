@@ -11,23 +11,23 @@ const IndividualMoviePage = ({ selectedContent }) => {
   const [videoContainerWidth, setVideoContainerWidth] = useState(0);
   const [foundTrailer, setFoundTrailer] = useState(false);
   const [trailerKey, setTrailerKey] = useState(
-    JSON.parse(localStorage.getItem("lastContent")).key
+    JSON.parse(localStorage.getItem("lastContent"))?.key
   );
 
   selectedContent.id =
-    selectedContent.id ?? JSON.parse(localStorage.getItem("lastContent")).id;
+    selectedContent.id ?? JSON.parse(localStorage.getItem("lastContent"))?.id;
 
   selectedContent.title =
     selectedContent.title ??
-    JSON.parse(localStorage.getItem("lastContent")).title;
+    JSON.parse(localStorage.getItem("lastContent"))?.title;
 
   selectedContent.description =
     selectedContent.description ??
-    JSON.parse(localStorage.getItem("lastContent")).description;
+    JSON.parse(localStorage.getItem("lastContent"))?.description;
 
   selectedContent.mediaType =
     selectedContent.mediaType ??
-    JSON.parse(localStorage.getItem("lastContent")).mediaType;
+    JSON.parse(localStorage.getItem("lastContent"))?.mediaType;
 
   const updateWidth = () => {
     if (videoContainer.current) {

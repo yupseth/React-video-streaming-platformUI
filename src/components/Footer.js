@@ -15,7 +15,7 @@ const Footer = () => {
 
       <div className={style.bottomHalf}>
         <div className={style.copyright}>
-          <p>Anima. Copyright ©Cristina Șuică 2023</p>
+          <p>Anima. Copyright ©Cristina Șuică {new Date().getFullYear()}</p>
         </div>
         <div className={style.bottom}>
           <ul>
