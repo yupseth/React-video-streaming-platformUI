@@ -1,11 +1,10 @@
 import style from "./Nav.module.scss";
 import logo from "../img/Anima_Logo.png";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import Menu from "./Menu";
 import Profile from "./Profile";
 import SearchBar from "./SearchBar";
-import SearchResultPage from "./pages/search/SearchResultPage";
 import { Link } from "react-router-dom";
 
 const Nav = ({ results, setResults }) => {
@@ -19,11 +18,7 @@ const Nav = ({ results, setResults }) => {
   //////////
   const [isVisibleSearch, setIsVisibleSearch] = useState(false);
   ////////////
-
-  const toggleVisibility = () => {
-    setIsVisibleSearch(!isVisibleSearch);
-  };
-
+  const profileRef = useRef(null);
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 100) {
@@ -33,6 +28,19 @@ const Nav = ({ results, setResults }) => {
       }
     });
   }, []);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (profileRef.current && !profileRef.current.contains(event.target)) {
+        setIsVisibleProfile(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [profileRef]);
 
   const showMenu = () => {
     setIsVisibleMenu(!isVisibleMenu);
@@ -53,12 +61,7 @@ const Nav = ({ results, setResults }) => {
 
       <div className={style.right}>
         <Link to="/search">
-          <SearchBar
-            isVisible={isVisibleSearch}
-            toggleVisibility={toggleVisibility}
-            setResults={setResults}
-            results={results}
-          />{" "}
+          <SearchBar setResults={setResults} results={results} />{" "}
         </Link>
 
         <img
@@ -67,7 +70,7 @@ const Nav = ({ results, setResults }) => {
           src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzR8fGFuaW1hbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
           alt="user avatar"
         />
-        {isVisibleProfile && <Profile />}
+        {isVisibleProfile && <Profile fRef={profileRef} />}
       </div>
     </div>
   );

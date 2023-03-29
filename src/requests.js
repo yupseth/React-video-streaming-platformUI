@@ -62,9 +62,8 @@ const requests = [
   {
     isLarge: false,
     name: "Trailer",
-    fetch: `https://api.themoviedb.org/3/movie/{movie_id}/videos?api_key=${API_KEY}&language=en-US`,
+    fetch: `https://api.themoviedb.org/3/{media_type}/{movie_id}/videos?api_key=${API_KEY}&language=en-US`,
   },
-
   {
     place: "movies",
     name: "Movies",

@@ -3,7 +3,7 @@ import requests from "../../../requests";
 import style from "./Rows.module.scss";
 
 //generator function for Row IDs
-const Rows = () => {
+const Rows = ({ onSelectContent }) => {
   function* idGenerator() {
     let id = 0;
     while (true) {
@@ -20,6 +20,7 @@ const Rows = () => {
         (req) =>
           req.place === "home" && (
             <Row
+              onSelectContent={onSelectContent}
               key={gen.next().value}
               title={req.name}
               fetchURL={req.fetch}

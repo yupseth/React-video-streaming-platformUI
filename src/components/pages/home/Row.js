@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Thumbnail from "../../Thumbnail";
 import style from "./Row.module.scss";
 import axios from "../../../axios";
 // import InfoBox from "../../InfoBox";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
-const Row = ({ title, fetchURL, isLargeRow }) => {
+const Row = ({ title, fetchURL, isLargeRow, onSelectContent }) => {
   const navigate = useNavigate();
   const [movies, setMovies] = useState([]);
   // const [showInfo, setShowInfo] = useState(false);
@@ -22,9 +23,10 @@ const Row = ({ title, fetchURL, isLargeRow }) => {
     fetchData();
   }, [fetchURL]);
 
-  // const displayDescription = () => {
-  //   setShowInfo(!showInfo);
-  // };
+  const handleClick = (id, title, description, mediaType) => {
+    onSelectContent(id, title, description, mediaType);
+    navigate("/individualMovie");
+  };
 
   return (
     <div className={style.row}>
@@ -32,12 +34,18 @@ const Row = ({ title, fetchURL, isLargeRow }) => {
 
       <div className={style.row__posters}>
         {movies.map((movie) => (
-          <img
-            onClick={() => navigate("/individualMovie")}
+          <Thumbnail
+            onClick={() =>
+              handleClick(
+                movie.id,
+                movie.title ?? movie.name,
+                movie.overview,
+                movie.title ? "movie" : "tv"
+              )
+            }
+            id={movie.id}
             key={movie.id}
-            className={`${style.row__poster} ${
-              isLargeRow && style.row__posterLarge
-            }`}
+            className={`row__poster ${isLargeRow ? "row__posterLarge" : ""}`}
             src={`${base_url}${
               isLargeRow ? movie.poster_path : movie.backdrop_path
             }`}

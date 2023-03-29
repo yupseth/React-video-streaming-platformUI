@@ -1,9 +1,24 @@
 import style from "./SearchBar.module.scss";
 import SearchIcon from "@mui/icons-material/Search";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const SearchBar = ({ setResults, isVisible, toggleVisibility, results }) => {
   const [input, setInput] = useState("");
+  const [visibleInput, setVisibleInput] = useState(false);
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (inputRef.current && !inputRef.current.contains(event.target)) {
+        setVisibleInput(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [inputRef]);
 
   const fetchData = (value) => {
     fetch(
@@ -24,16 +39,18 @@ const SearchBar = ({ setResults, isVisible, toggleVisibility, results }) => {
     fetchData(value);
   };
   return (
-    <div className={style.input_wrapper}>
-      <SearchIcon className={style.search_icon} onClick={toggleVisibility} />
-      {isVisible && (
+    <div className={style.input_wrapper} ref={inputRef}>
+      <SearchIcon
+        className={style.search_icon}
+        onClick={() => setVisibleInput(true)}
+      />
+      {visibleInput && (
         <>
           <input
             placeholder="Type to search..."
             value={input}
             onChange={(e) => handleChange(e.target.value)}
           />
-          <div className={style.outsideClickArea} onClick={toggleVisibility} />
         </>
       )}
     </div>
