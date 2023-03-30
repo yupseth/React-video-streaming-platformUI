@@ -99,6 +99,7 @@ However, I managed to bypass it by keeping autoplay active and using a setTimeou
 - Using Axios for fetch requests
 - Deploying with Netlify
 - Using Material Icons
+- (Hopefully) Filtering out Asian mature content that slipped TMDB's endopint filtering options
 - Finding out pre-made react sliders exist after ending a very long labour of converting a horizontally scrollable div into a slider.
 
 ## License
