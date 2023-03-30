@@ -80,11 +80,6 @@ However, I managed to bypass it by keeping autoplay active and using a setTimeou
 - Contains a dummy list of Privacy, Terms, Help
 
 
-## Demo
-
-![A short demo of how Anima works and behaves](images/demo.gif)
-
-
 ## Knowledge Aquisitions
 
 ### React Highlights:
