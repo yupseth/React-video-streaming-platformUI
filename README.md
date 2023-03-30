@@ -8,6 +8,19 @@
 
 > This is the most ambitious project I have done so far in my still on-going React learning journey. It has offered the opportunity of applying both familiar and unfamiliar concepts, adding depth to my web development understanding, as well as offering a brutally honest perspective on the development process of a large, complex application.
 
+## Screenshots
+<p align="center">
+<img src="https://github.com/yupseth/React-video-streaming-platformUI/blob/main/Anima%20screenshots/1.png" width=700 height=auto/>
+</p>
+<p align="center">
+<img src="https://github.com/yupseth/React-video-streaming-platformUI/blob/main/Anima%20screenshots/2.png" width=350 height=auto/>
+<img src="https://github.com/yupseth/React-video-streaming-platformUI/blob/main/Anima%20screenshots/4.png" width=350 height=auto/>
+<p/>
+<p align="center">
+<img src="https://github.com/yupseth/React-video-streaming-platformUI/blob/main/Anima%20screenshots/3.png" width=700 height=auto/>
+
+<p/>
+
 ## About
 
 Anima is a mobile first, responsive single page web application using HTML, SCSS module and React JS. 
@@ -101,6 +114,10 @@ However, I managed to bypass it by keeping autoplay active and using a setTimeou
 - Using Material Icons
 - (Hopefully) Filtering out Asian mature content that slipped TMDB's endopint filtering options
 - Finding out pre-made react sliders exist after ending a very long labour of converting a horizontally scrollable div into a slider.
+
+## Thanks
+Cristian Taloi for guiding and continuous feedback <br/>
+Ciprian Pitorac for the logo and icon
 
 ## License
 
