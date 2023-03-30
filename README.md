@@ -85,7 +85,7 @@ However, I managed to bypass it by keeping autoplay active and using a setTimeou
 ### React Highlights:
 > 90% of the implementation of this app happened before properly learning the concepts in a cohesive course
 
-> When I started developing this app, my abilities with respect to React were very modest to say the least. I had just started Maximilian Schawrmuller's React course and I hardly had any experience with react hooks other than useState. Most of the solutions I had to overcome were the result of a self-driven navigation of the world wide web. Hence, they were not optimal. But I am happy they worked. 
+> When I started developing this app, my abilities with respect to React were very modest to say the least. I had just started Maximilian Schawrmuller's React course and I hardly had any experience with react hooks other than useState. Most of the solutions I had to come up with were the result of a self-driven navigation of the world wide web. Hence, they were not optimal. But I am happy they worked. 
 
 - React Routing (Link and useNavigate)
 - Using generator functions for creating unique IDs for same-nature elements
