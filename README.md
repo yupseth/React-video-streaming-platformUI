@@ -6,7 +6,7 @@
 
 📱💻 → [Click here to try it out](https://anima-trailer.netlify.app/)
 
-> This is the most ambitious project I have done so far in my still on-going React learning journey. It has offered the opportunity of applying both familiar and unfamiliar concepts, adding depth to my web development understanding, as well as offering a brutally honest perspective on the development process of a large, complex application.
+> This is the most ambitious project I have done so far in my on-going React journey.
 
 ## Screenshots
 <p align="center">
@@ -23,24 +23,24 @@
 
 ## About
 
-Anima is a mobile first, responsive single page web application using HTML, SCSS module and React JS. 
+Anima is a mobile first, responsive single page web application using HTML, SCSS modules, React JS and React Router. 
 
-Most of the media content is quantitatively limited, displaying the top 20 items in the selected category or page in a descending popularity order.
-The only exhaustive list of movies and/or TV shows is found in the search functionality. However, the displayed content is still limited to 20 items per page until further detailed specifications.
+The app displays the top 20 items in the selected category or page in a descending popularity order.
+The only exhaustive list of movies and/or TV shows is found in the search functionality. However, the displayed content is still limited to 20 items per page until the user provides a more specific query.
 
-It uses axios for fetching movie and tv shows data from [The Movie Database API](https://www.themoviedb.org/), then it dynamically displays it according to the components' necessities.
+It uses axios for fetching movie and tv shows data from [The Movie Database API](https://www.themoviedb.org/), then it dynamically displays it according to the components' specifications.
 
 
 
 ## Functionality
 
-Anima is built using progressively more specific components, starting from the core sections of interest.
+Anima is built using progressively specific components.
 
 ### Nav Bar
 - Responsive, changes aspect on scroll 
 - Responsive and collapsable menu for page-browsing
-- The Anima logo servers as a home button
 - Responsive and collapsable search bar 
+- The Anima logo servers as a home button
 - A mock profile section (collapsable, as well)
 
 ### Home Page
@@ -70,7 +70,7 @@ Anima is built using progressively more specific components, starting from the c
 - The data is persistent on page reload
 - It uses react-youtube to show the trailer (if existing)
 
-> The autoplay function could be inconsistent at times, as react-youtube prevents it while the video is unmuted.
+> The autoplay function could be inconsistent at times, as modern broswers prevent it while the video is unmuted.
 However, I managed to bypass it by keeping autoplay active and using a setTimeout to unmute the video after a few moments.
 
 ### The Footer Section
@@ -107,12 +107,13 @@ However, I managed to bypass it by keeping autoplay active and using a setTimeou
 - Using Axios for fetch requests
 - Deploying with Netlify
 - Using Material Icons
-- (Hopefully) Filtering out Asian mature content that slipped TMDB's endopint filtering options
+- (Hopefully) Filtering out mature content that slipped TMDB's endopint filtering options
 - Finding out pre-made react sliders exist after ending a very long labour of converting a horizontally scrollable div into a slider.
 
 ## Thanks
 Cristian Taloi for guiding and continuous feedback <br/>
-Ciprian Pitorac for the logo and icon
+Ciprian Pitorac for the logo and icon <br/>
+Constantin Istrate for being a rubber duck
 
 ## License
 
